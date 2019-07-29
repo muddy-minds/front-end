@@ -1,0 +1,13 @@
+{
+  "name": "MUDDYMINDS-frontend",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/muddy-minds/front-end.git",
+  "author": "Team G",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
