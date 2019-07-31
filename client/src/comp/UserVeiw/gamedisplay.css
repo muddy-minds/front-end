@@ -1,0 +1,20 @@
+.parent {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "nav nav nav nav nav nav nav nav" "header header header header header header header header" "map map map map map map LogsArea LogsArea" "map map map map map map LogsArea LogsArea" "map map map map map map LogsArea LogsArea" "map map map map map map playerArea playerArea" "inputArea inputArea inputArea inputArea inputArea inputArea playerArea playerArea" "Footer Footer Footer Footer Footer Footer Footer Footer";
+  }
+  
+  .map { grid-area: map; }
+  
+  .nav { grid-area: nav; }
+  
+  .header { grid-area: header; }
+  
+  .playerArea { grid-area: playerArea; }
+  
+  .logsArea { grid-area: LogsArea; }
+  
+  .inputArea { grid-area: inputArea; }
+  
+  .footer { grid-area: Footer; }

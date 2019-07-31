@@ -12,7 +12,8 @@ export default ({ url }) => {
   
     return (
       <div>
-      {datatype.map(data => <h2>{data.name}</h2>)}
+      {datatype.map(data => 
+        <h2>{data.name}<br/>{data.description}</h2> )}
       </div>
     );
 };
