@@ -9,6 +9,7 @@ function App() {
     <div className="display">
     <GameDisplay />
     </div>
+    {/* <Data /> */}
     </>
   );
 }
