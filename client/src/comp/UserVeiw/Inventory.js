@@ -15,7 +15,8 @@ function Inventory() {
       console.log(player)
 
     return (
-        <div>
+        <>
+        <div className="playerCard">
             {player.map(data => 
         <dir>
         <h3>{data.name}</h3>
@@ -25,6 +26,7 @@ function Inventory() {
         <p>Room: {data.room_id}</p>
         </dir> )}
         </div>
+        </>
     )
 }
 

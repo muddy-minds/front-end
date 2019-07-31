@@ -2,7 +2,7 @@
   display: grid
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr
   grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr
-  grid-template-areas: "nav nav nav nav nav nav nav nav" "header header header header header header header header" "map map map map map map LogsArea LogsArea" "map map map map map map LogsArea LogsArea" "map map map map map map LogsArea LogsArea" "map map map map map map playerArea playerArea" "inputArea inputArea inputArea inputArea inputArea inputArea playerArea playerArea" "Footer Footer Footer Footer Footer Footer Footer Footer"
+  grid-template-areas: "nav nav nav nav nav nav nav nav" "header header header header header header header header" "map map map map map map logsArea logsArea" "map map map map map map LogsArea LogsArea" "map map map map map map LogsArea LogsArea" "map map map map map map playerArea playerArea" "inputArea inputArea inputArea inputArea inputArea inputArea playerArea playerArea" "Footer Footer Footer Footer Footer Footer Footer Footer"
 
 .map
   grid-area: map
@@ -18,11 +18,16 @@
 
 .playerArea
   grid-area: playerArea
-  border: 1px solid red
+  background-color: #639DBC
+  margin: 10px
 
-.LogsArea
-  grid-area: LogsArea
-  border: 1px solid red
+.logsArea
+  grid-area: logsArea
+  border: 3px solid rgba(171, 171, 171, 1)
+  padding: 5px
+  margin: 10px
+  height: 100%
+  background-color: rgba(171, 171, 171, 0.5);
 
 .inputArea
   grid-area: inputArea

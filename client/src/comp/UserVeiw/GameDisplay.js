@@ -19,7 +19,7 @@ function GameDisplay() {
             <div  className="map" >
                 <Map/>
             </div>
-            <div  className="logArea">
+            <div  className="logsArea">
                 <Logs/>
             </div>
             <div className="inputArea">
