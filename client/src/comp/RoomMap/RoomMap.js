@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import axios from "axios";
 
 import { fetchRoom } from '../../actions/room/room.action';
-import { FlexibleXYPlot, LineSeries, MarkSeries } from 'react-vis';
+import { XYPlot, LineSeries, MarkSeries } from 'react-vis';
 
 import Room from '../Room/Room';
 
@@ -42,8 +42,8 @@ class RoomMap extends React.Component {
             // have added all rooms 
             for (let x = 0; x < this.state.graphWidth; x++) {
                 // this.state.graphData[room_index].append([x,y])
-                console.log("Each [x,y] ", [x,y] )
-                coords.push([x,y])
+                console.log("Each [x,y] ",{"x": x, "y": y })
+                coords.push({"x": x, "y": y })
                 room_index += 1
             }
             y += 1
@@ -51,56 +51,27 @@ class RoomMap extends React.Component {
         
         this.setState({coordiantes: coords})
     }
-    render() {
-        const { fetching, rooms } = this.props;
-        console.log("Graph coordinates", this.state.coordiantes)
+
+
+    render() 
+    {   
         return (
-            <div className="room-map">
-                {/* {!fetching &&
-                    rooms.map(({ id, ...otherRoomProps }) => (
-                        <Room key={id} {...otherRoomProps} />
-                    ))} */}
+        <div className="div">
+                <XYPlot width={300}
+                height={300}>
 
-            <FlexibleXYPlot>
+                <MarkSeries 
+                className="mark-series-example"
+                strokeWidth={2}
+                opacity="1"
+                size={this.state.graphWidth}
+                colorType="literal"
+                data={this.state.coordiantes}
+                style={{ cursor: 'pointer', transition: 'all .2s' }}
+                />
 
-            <MarkSeries
-            className="mark-series-example"
-            strokeWidth={2}
-            opacity="1"
-            size={this.state.graphWidth}
-            colorType="literal"
-            data={this.state.coordinates}
-            style={{ cursor: 'pointer', transition: 'all .2s' }}
-            // // Get the id and travels to that node onClick
-            // onValueClick={datapoint => {
-            //   for (let key in graph) {
-            //     if (
-            //       graph[key][0].x === datapoint.x &&
-            //       graph[key][0].y === datapoint.y
-            //     ) {
-            //       travelToNode(parseInt(key));
-            //       this.setState({ value: key });
-            //     }
-            //   }
-            // }}
-            // // Show the id of the moused over node in the UI
-            // onValueMouseOver={datapoint => {
-            //   for (let key in graph) {
-            //     if (
-            //       graph[key][0].x === datapoint.x &&
-            //       graph[key][0].y === datapoint.y
-            //     ) {
-            //       this.setState({ value: key });
-            //     }
-            //   }
-            // }}
-            // onValueMouseOut={() => {
-            //   this.setState({ value: null });
-            // }}
-          />
-
-            </FlexibleXYPlot>
-            </div>
+                </XYPlot>
+        </div>
         );
     }
 }
