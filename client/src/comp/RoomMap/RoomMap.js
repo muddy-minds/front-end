@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import { fetchRoom } from '../../actions/room/room.action';
 
+import './RoomMap.styles.scss'
+
 import Room from '../Room/Room';
 
 class RoomMap extends React.Component {
@@ -15,7 +17,7 @@ class RoomMap extends React.Component {
             <div className="room-map">
                 {!fetching &&
                     rooms.map(({ id, ...otherRoomProps }) => (
-                        <Room key={id} {...otherRoomProps} />
+                        <Room className="roomManager" key={id} {...otherRoomProps} />
                     ))}
             </div>
         );

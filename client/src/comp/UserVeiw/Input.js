@@ -4,7 +4,8 @@ import './input.sass'
 function Input() {
     return (
         <div>
-            <input className="input"></input>|
+            <input className="input"
+                    placeholder="enter commands here --->"></input>|
         </div>
     )
 }
