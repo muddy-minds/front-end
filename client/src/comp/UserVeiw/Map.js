@@ -1,9 +1,11 @@
 import React from 'react'
+import RoomMap  from '../RoomMap/RoomMap'
 
 function Map() {
     return (
-        <div>
-        </div>
+        <>
+        <RoomMap />
+        </>
     )
 }
 
