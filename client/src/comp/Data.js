@@ -5,7 +5,7 @@ export default () => {
     const [datatype, setDatatype] = useState([]);
     useEffect(() => {
       axios
-        .get("https://muddyminds.herokuapp.com/api/players/")
+        .get("https://muddyminds.herokuapp.com/api/rooms/")
         .then(response => setDatatype(response.data))
         .catch(err => console.log("an error occurs", err));
     }, []);
@@ -14,7 +14,7 @@ export default () => {
     return (
       <div>
       {datatype.map(data => 
-        <h2>{data.name}<br/>{data.name}</h2> )}
+        <h2>{data.name}<br/>{data.description}</h2> )}
       </div>
     );
 };

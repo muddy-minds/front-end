@@ -1,25 +1,79 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import axios from "axios";
 
 import { fetchRoom } from '../../actions/room/room.action';
+import { XYPlot, LineSeries, MarkSeries } from 'react-vis';
 
 import './RoomMap.styles.scss'
 
 import Room from '../Room/Room';
 
+// Maps
+// https://github.com/rytwalker/treasure-hunt/blob/master/src/components/Map.js
+
 class RoomMap extends React.Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            graphData: [],
+            graphWidth: 10,
+            coordiantes: []
+        }
+    }
+
     componentWillMount() {
+        // axios
+        // .get("https://muddyminds.herokuapp.com/api/rooms/")
+        // .then(response => this.setState({graphData: response.data}))
+        // .catch(err => console.log("an error occurs", err));
+        this.addCoordinates()
         this.props.fetchRoom();
     }
-    render() {
-        const { fetching, rooms } = this.props;
+
+    addCoordinates = () => {
+        let y = 0
+        let room_index = 0
+
+        let coords = []
+        // we loop through all rooms in graph 
+        while (room_index != 20) {  
+            
+            // we add coordinates per row, and go to next row, until we 
+            // have added all rooms 
+            for (let x = 0; x < this.state.graphWidth; x++) {
+                // this.state.graphData[room_index].append([x,y])
+                console.log("Each [x,y] ",{"x": x, "y": y })
+                coords.push({"x": x, "y": y })
+                room_index += 1
+            }
+            y += 1
+        }
+        
+        this.setState({coordiantes: coords})
+    }
+
+
+    render() 
+    {   
         return (
-            <div className="room-map">
-                {!fetching &&
-                    rooms.map(({ id, ...otherRoomProps }) => (
-                        <Room className="roomManager" key={id} {...otherRoomProps} />
-                    ))}
-            </div>
+        <div className="div">
+                <XYPlot width={300}
+                height={300}>
+
+                <MarkSeries 
+                className="mark-series-example"
+                strokeWidth={2}
+                opacity="1"
+                size={this.state.graphWidth}
+                colorType="literal"
+                data={this.state.coordiantes}
+                style={{ cursor: 'pointer', transition: 'all .2s' }}
+                />
+
+                </XYPlot>
+        </div>
         );
     }
 }
