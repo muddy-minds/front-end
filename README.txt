@@ -18,7 +18,7 @@
 
             You only have so much TIME
 
-
+A Text Based Multi User Dungeon
 Built with React and  Django
 
 Deployed at https://muddy-minds.netlify.com/
