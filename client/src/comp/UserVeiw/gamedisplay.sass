@@ -1,38 +1,49 @@
 .parent
   display: grid
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr
-  grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr
-  grid-template-areas: "nav nav nav nav nav nav nav nav" "header header header header header header header header" "map map map map map map logsArea logsArea" "map map map map map map LogsArea LogsArea" "map map map map map map LogsArea LogsArea" "map map map map map map playerArea playerArea" "inputArea inputArea inputArea inputArea inputArea inputArea playerArea playerArea" "Footer Footer Footer Footer Footer Footer Footer Footer"
+  grid-template-rows: 0.25fr 1fr 3fr 1.3fr 1.3fr 1.3fr .3fr .3fr
+  grid-template-areas: "nav nav nav nav nav nav nav nav" "header header header header header header header header" "map map map map map map logsArea logsArea" "map map map map map map logsArea logsArea" "map map map map map map playerArea playerArea" "map map map map map map playerArea playerArea" "inputArea inputArea inputArea inputArea inputArea inputArea inputArea inputArea" "Footer Footer Footer Footer Footer Footer Footer Footer"
 
 .map
   grid-area: map
-  border: 1px solid red
+  border: 3px solid black
+  margin: 10px
 
 .nav
   grid-area: nav
-  border: 1px solid red
+  border: 1px solid #639DBC
 
 .header
   grid-area: header
-  border: 1px solid red
+  text-align: center
+  font-size: 8px
+  padding: 5px
+
 
 .playerArea
   grid-area: playerArea
   background-color: #639DBC
   margin: 10px
+  position: relative
 
 .logsArea
   grid-area: logsArea
   border: 3px solid rgba(171, 171, 171, 1)
-  padding: 5px
+  padding: 7px
   margin: 10px
-  height: 100%
+  width: auto
+  overflow: hidden
   background-color: rgba(171, 171, 171, 0.5);
 
 .inputArea
   grid-area: inputArea
-  border: 1px solid red
+  border: 5px solid black
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white
+  margin: 10px
+  font-size: 20px
+  padding: 5px 20px
+  max-height: 30px
 
 .footer
   grid-area: Footer
-  border: 1px solid red
