@@ -1,9 +1,11 @@
 import React from 'react'
+import axios from 'axios'
+import './logs.sass'
 
 function Logs() {
     return (
-        <div>
-            logs
+        <div className="title">
+            Waiting... <br/>Welcome, friend.
         </div>
     )
 }
