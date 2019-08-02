@@ -12,7 +12,6 @@ function Inventory() {
           .catch(err => console.log("an error occurs", err));
       }, []);
 
-      console.log(player)
 
     return (
         <>

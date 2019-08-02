@@ -6,7 +6,6 @@ import Data from '../Data'
 function Logs() {
     return (
         <div className="title">
-            Waiting... <br/>Welcome, friend.<br/>
         </div>
     )
 }

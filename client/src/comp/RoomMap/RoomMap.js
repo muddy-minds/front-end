@@ -38,7 +38,8 @@ class RoomMap extends React.Component {
 
         let coords = []
         // we loop through all rooms in graph 
-        while (room_index != 20) {  
+        while (room_index != this.state.graphWidth
+            ) {  
             
             // we add coordinates per row, and go to next row, until we 
             // have added all rooms 
@@ -58,7 +59,7 @@ class RoomMap extends React.Component {
     render() 
     {   
         return (
-        <div className="div">
+        <div className="roomManager">
                 <XYPlot width={300}
                 height={300}>
 
