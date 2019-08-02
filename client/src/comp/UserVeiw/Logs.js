@@ -34,8 +34,6 @@ const Logs = props => {
   return (
     <>
       <div className="title">
-        Waiting... <br />
-        Welcome, friend
       </div>
       <form>
         <input
