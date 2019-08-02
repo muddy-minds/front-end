@@ -1,10 +1,11 @@
 import React from 'react'
 import RoomMap  from '../RoomMap/RoomMap'
+import './map.sass'
 
 function Map() {
     return (
         <>
-        <RoomMap />
+        <RoomMap className="map" />
         </>
     )
 }
