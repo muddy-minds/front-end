@@ -1,5 +1,5 @@
-import React from 'react'
-import './input.sass'
+import React from "react";
+import "./input.sass";
 
 function Input() {
     return (
@@ -10,4 +10,4 @@ function Input() {
     )
 }
 
-export default Input
+export default Input;
