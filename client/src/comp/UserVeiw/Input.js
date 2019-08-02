@@ -1,12 +1,13 @@
-import React from 'react'
-import './input.sass'
+import React from "react";
+import "./input.sass";
 
 function Input() {
-    return (
-        <div>
-            <input className="input"></input>|
-        </div>
-    )
+  return (
+    <div>
+      <input className="input"></input>|
+
+    </div>
+  );
 }
 
-export default Input
+export default Input;

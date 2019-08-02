@@ -33,3 +33,49 @@ export default connect(
     mapStateToProps,
     { fetchRoom }
 )(RoomMap);
+
+// import React, { useState, useEffect, useContext } from "react";
+// import { Link, withRouter } from "react-router-dom";
+// import axios from "axios";
+
+// const RoomMap = props => {
+//   const [playerInput, setPlayerInput] = useState();
+//   const [roomInfo, setRoomInfo] = useState({});
+
+//   const submitPlayerInput = e => {};
+
+//   useEffect(() => {
+//     axios
+//       .get(`https://muddyminds.herokuapp.com/api/rooms/${playerInput}`)
+//       .then(res => {
+//         console.log(res, "room obj");
+//         setRoomInfo(res.data);
+//       })
+//       .catch(err => {
+//         console.log(err.message);
+//       });
+//   }, []);
+
+//   return (
+//     <>
+//       <form>
+//         <input
+//           type="text"
+//           name="playerInput"
+//           value={playerInput}
+//           onChange={e => setPlayerInput(e.target.value)}
+//           placeholder="Enter room number to go to that room"
+//         />
+//         <button type="submit">Submit</button>
+//       </form>
+
+//       <div>
+//           Room Name: {roomInfo.name}
+//           Room Description: {roomInfo.description}
+
+//       </div>
+//     </>
+//   );
+// };
+
+// export default RoomMap;
